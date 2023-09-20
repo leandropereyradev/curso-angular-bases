@@ -2,8 +2,17 @@
 
 <ul class="list-group">
   <li
-    *ngFor="let character of characterList; let i = index"
+    *ngFor="
+      let character of characterList;
+      let i = index;
+      let isEven = even;
+      let isOdd = odd
+    "
     class="list-group-item"
+    [ngClass]="{
+      'list-group-item-success': isEven,
+      'list-group-item-dark': isOdd
+    }"
   >
     <!-- <li
     *ngFor="
